@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MovieFolex Downloads</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>MovieFolex Downloads</h1>
+    <nav><a href="index.html">← Back to Home</a></nav>
+  </header>
+
+  <main class="download-section">
+    <div class="movie-info" id="movieInfo">
+      <!-- Content inserted via JS -->
+    </div>
+  </main>
+
+  <script src="movies.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const movieId = params.get("id");
+    const movie = movies.find(m => m.id == movieId);
+
+    const container = document.getElementById("movieInfo");
+
+    if (movie) {
+      container.innerHTML = \`
+        <img src="\${movie.poster}" alt="Movie Poster" class="download-poster" />
+        <div class="movie-details">
+          <p><strong>Title:</strong> \${movie.title}</p>
+          <p><strong>Languages:</strong> \${movie.language}</p>
+          <p><strong>Resolution:</strong> \${movie.resolution}</p>
+          <p><strong>Genre:</strong> \${movie.genre}</p>
+        </div>
+        <div class="review-box">
+          <h3>Movie Review</h3>
+          <p>\${movie.review}</p>
+        </div>
+        <div class="center-btn">
+          <a href="\${movie.download}" class="download-btn" target="_blank">Download Now</a>
+        </div>
+      \`;
+    } else {
+      container.innerHTML = "<p>Movie not found.</p>";
+    }
+  </script>
+</body>
+</html>

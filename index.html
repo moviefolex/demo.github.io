@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MovieFolex</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>MovieFolex</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="movie-grid" id="movieGrid"></div>
+  </main>
+
+  <script src="movies.js"></script>
+  <script>
+    const grid = document.getElementById('movieGrid');
+    movies.forEach(movie => {
+      const card = document.createElement('a');
+      card.className = 'movie-card';
+      card.href = `download.html?id=${movie.id}`;
+      card.innerHTML = `
+        <img src="${movie.poster}" alt="${movie.title}" />
+        <h3>${movie.title}</h3>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: white;
+}
+
+header {
+  background: black;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  color: red;
+  margin: 0;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  text-align: center;
+  background: #1e1e1e;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.download-section {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.movie-info {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.download-poster {
+  max-width: 200px;
+  float: left;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.movie-details p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.review-box {
+  clear: both;
+  margin-top: 20px;
+  background: #222;
+  padding: 15px;
+  border-radius: 8px;
+  color: #ff4444;
+}
+
+.review-box h3 {
+  margin: 0 0 10px;
+  color: #ff4444;
+}
+
+.center-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.download-btn {
+  background-color: red;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background-color: darkred;
+}
